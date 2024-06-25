@@ -1,11 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Water.CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+  <!-- form -->
+  <link rel="stylesheet" href="frontend/styles/form.css">
   <title>Transactions</title>
 </head>
+
 <body>
-  
+  <form action="backend/php/index.php" method="post">
+    <div class="intial_data">
+      <label for="name_card">Cardholder name</label>
+      <input type="text" id="name_card" name="name_card" placeholder="e.g. Diego Saldoval" pattern="[^0-9]*"
+        title="El nombre no debe contener números" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="e.g. example@email.com" required>
+
+      <label for="card_number">Card Number</label>
+      <input type="text" id="card_number" name="card_number" placeholder="e.g. 1234 5678 9123 0000" required>
+    </div>
+
+    <div class="expiration">
+      <div>
+        <label for="card_month">Exp. date</label>
+        <input type="text" id="card_month" name="card_month" placeholder="MM" required>
+      </div>
+
+      <div>
+        <label for="card_year">(MM/YY)</label>
+        <input type="text" id="card_year" name="card_year" placeholder="YY" required>
+      </div>
+
+      <div>
+        <label for="card_cvc">CVC</label>
+        <input type="text" id="card_cvc" name="card_cvc" placeholder="e.g. 123" required>
+      </div>
+    </div>
+
+    <button type="submit">Confirm</button>
+  </form>
 </body>
+
 </html>
